@@ -11,14 +11,18 @@ print "I'll think of a number, and you can try to guess it."
 user_guess = int(raw_input("Please choose a number between 1 and 100. "))
 
 random_number = randint(1, 100)
-num_guesses = 0
+#print random_number
+
+num_guesses = 1
 
 while user_guess != random_number:
     if user_guess < random_number:
-        print "too low message"
-        user_guess = int(raw_input("Choose again. "))
+        print "Too low! "
+        user_guess = int(raw_input("Please choose again. "))
+        num_guesses += 1
     else:
-        print "too high message"
-        user_guess = int(raw_input("Choose again. "))
+        print "Too high!"
+        user_guess = int(raw_input("Please choose again. "))
+        num_guesses += 1
 
-print "congrats message"
+print "Congrats! You guessed it. You made {} guesses.".format(num_guesses)
